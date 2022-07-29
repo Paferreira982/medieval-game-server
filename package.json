@@ -1,6 +1,6 @@
 {
   "name": "medieval-game-server",
-  "version": "0.0.2",
+  "version": "0.2.2",
   "description": "Server of the game.",
   "main": "index.ts",
   "scripts": {
