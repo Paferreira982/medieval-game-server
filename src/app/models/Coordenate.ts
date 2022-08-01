@@ -3,7 +3,8 @@ import sequelize from '../database/SequelizeConfig'
 
 class Coordenate extends Model {
   declare uuid: string
-  declare name: string
+  declare x: number
+  declare y: number
 }
 
 Coordenate.init(
