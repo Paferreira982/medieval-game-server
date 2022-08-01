@@ -3,14 +3,14 @@ import sequelize from '../database/SequelizeConfig'
 
 class Infrastructure extends Model {
   declare uuid: string
-  declare lumberLVL: number
-  declare mineLVL: number
-  declare potteryLVL: number
-  declare storageLVL: number
-  declare quarterLVL: number
-  declare marketLVL: number
-  declare wallLVL: number
-  declare farmLVL: number
+  declare lumber_level: number
+  declare mine_level: number
+  declare pottery_level: number
+  declare storage_level: number
+  declare quarter_level: number
+  declare market_level: number
+  declare wall_level: number
+  declare farm_level: number
 }
 
 Infrastructure.init(
@@ -21,49 +21,49 @@ Infrastructure.init(
       primaryKey: true
     },
 
-    lumberLVL: {
+    lumber_level: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
       allowNull: false
     },
 
-    mineLVL: {
+    mine_level: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
       allowNull: false
     },
 
-    potteryLVL: {
+    pottery_level: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
       allowNull: false
     },
 
-    storageLVL: {
+    storage_level: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
       allowNull: false
     },
 
-    quarterLVL: {
+    quarter_level: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
       allowNull: false
     },
 
-    marketLVL: {
+    market_level: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
       allowNull: false
     },
 
-    wallLVL: {
+    wall_level: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
       allowNull: false
     },
 
-    farmLVL: {
+    farm_level: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
       allowNull: false
