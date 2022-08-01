@@ -1,6 +1,5 @@
 import { Model, DataTypes } from 'sequelize'
 import sequelize from '../database/SequelizeConfig'
-import Infrastructure from './Infrastructure'
 
 class City extends Model {
   declare uuid: string
@@ -25,7 +24,5 @@ City.init(
     sequelize
   }
 )
-
-City.hasOne(Infrastructure)
 
 export default City
