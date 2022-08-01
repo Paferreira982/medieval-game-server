@@ -1,6 +1,9 @@
 import { Model, DataTypes } from 'sequelize'
 import sequelize from '../database/SequelizeConfig'
 
+import Realm from './Realm'
+import Map from './Map'
+
 class Save extends Model {
   declare uuid: string
   declare name: string
@@ -24,5 +27,8 @@ Save.init(
     sequelize
   }
 )
+
+Save.hasMany(Realm)
+Save.belongsTo(Map)
 
 export default Save
