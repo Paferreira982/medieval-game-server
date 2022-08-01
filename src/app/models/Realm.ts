@@ -1,6 +1,5 @@
 import { Model, DataTypes } from 'sequelize'
 import sequelize from '../database/SequelizeConfig'
-import City from './City'
 
 class Realm extends Model {
   declare uuid: string
@@ -9,8 +8,6 @@ class Realm extends Model {
   declare wood: number
   declare iron: number
   declare brick: number
-  declare soldier: number
-  declare player: string
 }
 
 Realm.init(
@@ -24,12 +21,6 @@ Realm.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-
-    player: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: 'ROBOT'
     },
 
     gold: {
@@ -54,20 +45,13 @@ Realm.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0
-    },
-
-    soldier: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
     }
+
   },
   {
     tableName: 'realms',
     sequelize
   }
 )
-
-Realm.hasMany(City)
 
 export default Realm
