@@ -1,5 +1,6 @@
 import { Model, DataTypes } from 'sequelize'
 import sequelize from '../database/SequelizeConfig'
+import City from './City'
 
 class Map extends Model {
   declare uuid: string
@@ -30,5 +31,7 @@ Map.init(
     sequelize
   }
 )
+
+Map.hasMany(City)
 
 export default Map

@@ -1,5 +1,6 @@
 import { Model, DataTypes } from 'sequelize'
 import sequelize from '../database/SequelizeConfig'
+import Coordenate from './Coordenate'
 
 class City extends Model {
   declare uuid: string
@@ -24,5 +25,7 @@ City.init(
     sequelize
   }
 )
+
+City.hasOne(Coordenate)
 
 export default City
