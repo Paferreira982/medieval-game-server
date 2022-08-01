@@ -1,6 +1,9 @@
 import { Model, DataTypes } from 'sequelize'
 import sequelize from '../database/SequelizeConfig'
 
+import City from './City'
+import Infrastructure from './Infrastructure'
+
 class Hold extends Model {
   declare uuid: string
   declare customName: string
@@ -24,5 +27,8 @@ Hold.init(
     sequelize
   }
 )
+
+Hold.belongsTo(City)
+Hold.belongsTo(Infrastructure)
 
 export default Hold
