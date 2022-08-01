@@ -1,6 +1,10 @@
 import { Model, DataTypes } from 'sequelize'
 import sequelize from '../database/SequelizeConfig'
 
+import Army from './Army'
+import Flag from './Flag'
+import Hold from './Hold'
+
 class Realm extends Model {
   declare uuid: string
   declare name: string
@@ -53,5 +57,9 @@ Realm.init(
     sequelize
   }
 )
+
+Realm.belongsTo(Army)
+Realm.belongsTo(Flag)
+Realm.hasMany(Hold)
 
 export default Realm
