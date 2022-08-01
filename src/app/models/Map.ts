@@ -3,6 +3,8 @@ import sequelize from '../database/SequelizeConfig'
 
 class Map extends Model {
   declare uuid: string
+  declare name: string
+  declare image: Blob
 }
 
 Map.init(
