@@ -1,7 +1,6 @@
 import { Model, DataTypes } from 'sequelize'
 import sequelize from '../database/SequelizeConfig'
 
-import Army from './Army'
 import Flag from './Flag'
 import Hold from './Hold'
 
@@ -64,7 +63,6 @@ Realm.init(
   }
 )
 
-Realm.belongsTo(Army)
 Realm.belongsTo(Flag)
 Realm.hasMany(Hold)
 

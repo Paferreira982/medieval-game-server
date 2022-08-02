@@ -2,6 +2,7 @@ import { Model, DataTypes } from 'sequelize'
 import sequelize from '../database/SequelizeConfig'
 
 import City from './City'
+import Army from './Army'
 import Infrastructure from './Infrastructure'
 
 class Hold extends Model {
@@ -29,6 +30,7 @@ Hold.init(
 )
 
 Hold.belongsTo(City)
+Hold.belongsTo(Army)
 Hold.belongsTo(Infrastructure)
 
 export default Hold
