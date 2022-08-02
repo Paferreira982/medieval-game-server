@@ -15,7 +15,7 @@ class App {
   }
 
   private database (): void {
-    Database.createDatabase()
+    Database.prepareDatabase()
   }
 }
 

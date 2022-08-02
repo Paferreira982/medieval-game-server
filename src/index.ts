@@ -1,6 +1,6 @@
 import { io, server } from './server'
-// import Sequelize from './app/database/SequelizeConfig'
 
+// import Sequelize from './app/database/SequelizeConfig'
 // import Infrastructure from './app/models/Infrastructure'
 // import City from './app/models/City'
 // import Realm from './app/models/Realm'

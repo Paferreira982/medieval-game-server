@@ -12,6 +12,7 @@ class Realm extends Model {
   declare wood: number
   declare iron: number
   declare brick: number
+  declare player: string
 }
 
 Realm.init(
@@ -49,6 +50,11 @@ Realm.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0
+    },
+
+    player: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
 
   },

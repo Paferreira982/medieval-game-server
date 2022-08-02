@@ -16,7 +16,23 @@ class Database extends DatabaseConfig {
     })
   }
 
-  public async createDatabase (): Promise<void> {
+  public async prepareDatabase (): Promise<void> {
+    return this.pool.getConnection()
+      .then(connection => {
+        this.connection = connection
+        this.connection.query(`
+          SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '${this.name}'
+        `).then(response => {
+          if (!response[0]) this.createDatabase()
+        })
+      })
+      .catch(error => { console.error(error) })
+      .finally(() => {
+        if (this.connection) this.connection.end()
+      })
+  }
+
+  private async createDatabase (): Promise<void> {
     return this.pool.getConnection()
       .then(connection => {
         this.connection = connection
